@@ -12,7 +12,7 @@ export function About() {
         <div className="max-w-4xl mx-auto">
           <div className="space-y-6">
             <p className="text-lg text-[#64748B] leading-relaxed">
-              I'm a passionate full-stack developer and UI/UX designer currently pursuing my BT (Hons) in Information and Communication Technology at General Sir John Kotelawala Defence University. With expertise in creating modern, user-friendly applications, I bridge the gap between beautiful interfaces and robust functionality.
+              I'm a passionate full-stack developer currently pursuing my BT (Hons) in Information and Communication Technology at General Sir John Kotelawala Defence University. With expertise in creating modern, user-friendly applications, I bridge the gap between beautiful interfaces and robust functionality.
             </p>
             <p className="text-lg text-[#64748B] leading-relaxed">
               My approach combines technical excellence with creative problem-solving, from hotel management systems to smart home automation. I specialize in Java-based applications, web development, and IoT solutions, ensuring every project delivers both functionality and an exceptional user experience.

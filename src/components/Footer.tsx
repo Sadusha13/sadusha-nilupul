@@ -10,7 +10,7 @@ export function Footer() {
           <div>
             <h3 className="text-white text-xl font-semibold mb-4 font-['Poppins']">Sadusha Nilupul</h3>
             <p className="text-slate-400 leading-relaxed">
-              UI/UX Designer & Full-Stack Developer crafting beautiful digital experiences.
+             Full-Stack Developer with a growing focus on AI & Machine Learning, crafting intelligent digital experiences.
             </p>
           </div>
           

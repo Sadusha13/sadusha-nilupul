@@ -20,7 +20,7 @@ export function Hero() {
             </span>
           </h1>
           <p className="text-2xl text-[#64748B] font-['Inter']">
-            UI/UX Designer & Full-Stack Developer
+           Full-Stack Developer | AI Enthusiast
           </p>
           <p className="text-lg text-[#64748B] leading-relaxed">
             Creating beautiful, functional digital experiences
