@@ -1,5 +1,5 @@
 
-  # Personal Website
+  # Sadusha Nilupul
 
   This is a code bundle for Personal Website. The original project is available at https://www.figma.com/design/v8W3vOB57XBz46C1IBaIlK/Personal-Website.
 
