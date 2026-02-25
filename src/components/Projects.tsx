@@ -42,7 +42,7 @@ const projects = [
     tags: ["Web Development", "Database", "API"],
     github:
       "https://github.com/Sadusha13/SMART-CITY-INFORMATION-POTRAL",
-    demo: "#",
+    demo: "https://smart-city-information-potral.netlify.app/news",
   },
 ];
 
