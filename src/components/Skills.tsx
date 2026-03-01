@@ -18,7 +18,7 @@ const skills = [
     icon: Palette,
     title: "Django",
     description: "Python web framework for robust backends",
-    level: 80
+    level: 40
   },
   {
     icon: Rocket,
@@ -30,13 +30,13 @@ const skills = [
     icon: Code2,
     title: "Firebase",
     description: "Real-time database and authentication",
-    level: 55
+    level: 45
   },
   {
     icon: Database,
     title: "React & Next.js",
     description: "Modern frontend frameworks",
-    level: 75
+    level: 50
   }
 ];
 
