@@ -2,9 +2,19 @@ import { Button } from "./ui/button";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import profileImg from "../assets/images/profile.jpg";
-import cvFile from "../assets/cv/sdushanilupul.pdf";
+import cvFile from "../assets/cv/sadusha_nilupul.cv.pdf";
+import resumeFile from "../assets/cv/sadusha_nilupul.resume.pdf";
 
 export function Hero() {
+  const downloadFile = (fileUrl: string, fileName: string) => {
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section
       id="home"
@@ -57,17 +67,19 @@ export function Hero() {
               size="lg"
               variant="outline"
               className="h-12 px-6 rounded-[10px] border-[#2563EB] text-[#2563EB] hover:bg-[#111827] hover:text-white flex items-center gap-2"
-              onClick={() => {
-                const link = document.createElement('a');
-                link.href = cvFile;
-                link.download = 'Sadusha_Nilupul_CV.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
+              onClick={() => downloadFile(cvFile, "sadusha_nilupul_cv.pdf")}
             >
               <Download className="w-4 h-4" />
               Download CV
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="h-12 px-6 rounded-[10px] border-[#2563EB] text-[#2563EB] hover:bg-[#111827] hover:text-white flex items-center gap-2"
+              onClick={() => downloadFile(resumeFile, "sadusha_nilupul_resume.pdf")}
+            >
+              <Download className="w-4 h-4" />
+              Download Resume
             </Button>
           </div>
 

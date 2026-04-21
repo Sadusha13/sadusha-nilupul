@@ -3,6 +3,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
+import { supabase } from "../lib/supabase";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -10,12 +11,40 @@ export function Contact() {
     email: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState<{
+    type: "success" | "error";
+    text: string;
+  } | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Mock form submission
-    console.log("Form submitted:", formData);
-    alert("Thanks for reaching out! I'll get back to you soon.");
+
+    setIsSubmitting(true);
+    setSubmitMessage(null);
+
+    const { error } = await supabase.from("contacts").insert([
+      {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        message: formData.message.trim(),
+      },
+    ]);
+
+    setIsSubmitting(false);
+
+    if (error) {
+      setSubmitMessage({
+        type: "error",
+        text: "Could not send your message. Please try again.",
+      });
+      return;
+    }
+
+    setSubmitMessage({
+      type: "success",
+      text: "Thanks for reaching out! I will get back to you soon.",
+    });
     setFormData({ name: "", email: "", message: "" });
   };
 
@@ -75,9 +104,23 @@ export function Contact() {
                     required
                   />
                 </div>
-                <Button type="submit" className="w-full h-12 rounded-[10px] bg-[#2563EB] hover:bg-[#1d4ed8] text-white">
-                  Send Message
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full h-12 rounded-[10px] bg-[#2563EB] hover:bg-[#1d4ed8] text-white disabled:opacity-70"
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
+
+                {submitMessage && (
+                  <p
+                    className={`text-sm ${
+                      submitMessage.type === "success" ? "text-green-600" : "text-red-600"
+                    }`}
+                  >
+                    {submitMessage.text}
+                  </p>
+                )}
               </form>
             </div>
           </div>

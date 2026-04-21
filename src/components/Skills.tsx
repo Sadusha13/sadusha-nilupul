@@ -37,6 +37,12 @@ const skills = [
     title: "React & Next.js",
     description: "Modern frontend frameworks",
     level: 50
+  },
+  {
+    icon: Palette,
+    title: "Tailwind CSS",
+    description: "Utility-first CSS framework",
+    level: 40
   }
 ];
 

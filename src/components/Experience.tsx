@@ -5,7 +5,7 @@ const experiences = [
     type: "education",
     company: "General Sir John Kotelawala Defence University",
     role: "BT (Hons) Information And Communication Technology",
-    duration: "2023 - Present",
+    duration: "2024 - Present",
     description: "Currently pursuing a Bachelor of Technology (Honours) degree in Information and Communication Technology, specializing in software engineering, system design, and modern development practices. Actively engaged in academic projects and research in emerging technologies."
   },
  

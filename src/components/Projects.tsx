@@ -4,9 +4,18 @@ import { ExternalLink, Github } from "lucide-react";
 import hotelImg from "../assets/images/Hotel.png";
 import smsImg from "../assets/images/SMS.png";
 import smartHomeImg from "../assets/images/smart_home.jpg";
-import cityImg from "../assets/images/city.png";
+import cityImg from "../assets/images/City.png";
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  github: string;
+  demo?: string;
+};
+
+const projects: Project[] = [
   {
     title: "Vista Veranda",
     description:
@@ -21,9 +30,8 @@ const projects = [
     description:
       "Complete school management system for preschools with student enrollment, attendance tracking, parent communication, and educational progress monitoring.",
     image: smsImg,
-    tags: ["Java", "MySQL", " mongoDB"],
+    tags: ["Java", "MySQL", "MongoDB"],
     github: "https://github.com/Sadusha13/school-management-system",
-    demo: "",
   },
   {
     title: "Smart Home System",
@@ -32,7 +40,6 @@ const projects = [
     image: smartHomeImg,
     tags: ["IoT", "Arduino"],
     github: "https://github.com/Supun-0303/Smart-Home",
-    demo: null,
   },
   {
     title: "Smart City Information Portal",
@@ -59,9 +66,9 @@ export function Projects() {
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <div
-              key={index}
+              key={project.title}
               className="bg-white rounded-2xl overflow-hidden shadow-[0px_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0px_15px_40px_rgba(0,0,0,0.12)] transition-shadow"
             >
               <div className="relative h-52 overflow-hidden">
