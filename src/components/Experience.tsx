@@ -13,17 +13,17 @@ const experiences = [
 
 export function Experience() {
   return (
-    <section id="experience" className="py-24 px-20 bg-white">
+    <section id="experience" className="theme-section py-24 px-20 bg-white transition-colors duration-300">
       <div className="max-w-[1280px] mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-4 text-[#111827] font-['Poppins']">Experience</h2>
-        <p className="text-center text-[#64748B] mb-16 max-w-2xl mx-auto">
+        <h2 className="theme-title text-4xl font-bold text-center mb-4 text-[#111827] font-['Poppins']">Experience</h2>
+        <p className="theme-copy text-center text-[#64748B] mb-16 max-w-2xl mx-auto">
           My professional journey and educational background
         </p>
         
         {/* Timeline */}
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-[#E2E8F0]" />
+          <div className="theme-line absolute left-8 top-0 bottom-0 w-0.5 bg-[#E2E8F0]" />
           
           <div className="space-y-12">
             {experiences.map((exp, index) => (
@@ -38,19 +38,19 @@ export function Experience() {
                 </div>
                 
                 {/* Content Card */}
-                <div className="bg-[#F8FAFC] rounded-2xl p-6 shadow-[0px_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0px_15px_40px_rgba(0,0,0,0.12)] transition-shadow">
+                <div className="theme-card theme-card-soft bg-[#F8FAFC] rounded-2xl p-6 shadow-[0px_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0px_15px_40px_rgba(0,0,0,0.12)] transition-shadow">
                   <div className="flex justify-between items-start mb-3">
                     <div>
-                      <h3 className="text-xl font-semibold text-[#111827] font-['Poppins']">
+                      <h3 className="theme-title text-xl font-semibold text-[#111827] font-['Poppins']">
                         {exp.role}
                       </h3>
                       <p className="text-[#2563EB] font-medium">{exp.company}</p>
                     </div>
-                    <span className="text-sm text-[#64748B] bg-white px-4 py-2 rounded-lg">
+                    <span className="theme-chip text-sm text-[#64748B] bg-white px-4 py-2 rounded-lg">
                       {exp.duration}
                     </span>
                   </div>
-                  <p className="text-[#64748B] leading-relaxed">{exp.description}</p>
+                  <p className="theme-copy text-[#64748B] leading-relaxed">{exp.description}</p>
                 </div>
               </div>
             ))}

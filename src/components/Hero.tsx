@@ -3,7 +3,6 @@ import { Github, Linkedin, Mail, Download } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import profileImg from "../assets/images/profile.jpg";
 import cvFile from "../assets/cv/sadusha_nilupul.cv.pdf";
-import resumeFile from "../assets/cv/sadusha_nilupul.resume.pdf";
 
 export function Hero() {
   const downloadFile = (fileUrl: string, fileName: string) => {
@@ -18,21 +17,21 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-[90vh] flex items-center justify-center bg-[#F8FAFC] px-20 pt-20"
+      className="theme-section-alt min-h-[90vh] flex items-center justify-center bg-[#F8FAFC] px-20 pt-20 transition-colors duration-300"
     >
       <div className="max-w-[1280px] w-full grid md:grid-cols-2 gap-16 items-center">
         {/* Left Side */}
         <div className="space-y-6">
-          <h1 className="text-5xl font-bold text-[#111827] font-['Poppins']">
+          <h1 className="theme-title text-5xl font-bold text-[#111827] font-['Poppins']">
             Hi, I'm{" "}
             <span className="text-[#2563EB]">
               Sadusha Nilupul
             </span>
           </h1>
-          <p className="text-2xl text-[#64748B] font-['Inter']">
+          <p className="theme-copy text-2xl text-[#64748B] font-['Inter']">
            Full-Stack Developer | AI Enthusiast
           </p>
-          <p className="text-lg text-[#64748B] leading-relaxed">
+          <p className="theme-copy text-lg text-[#64748B] leading-relaxed">
             Creating beautiful, functional digital experiences
             with modern technologies and design principles.
           </p>
@@ -72,15 +71,8 @@ export function Hero() {
               <Download className="w-4 h-4" />
               Download CV
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="h-12 px-6 rounded-[10px] border-[#2563EB] text-[#2563EB] hover:bg-[#111827] hover:text-white flex items-center gap-2"
-              onClick={() => downloadFile(resumeFile, "sadusha_nilupul_resume.pdf")}
-            >
-              <Download className="w-4 h-4" />
-              Download Resume
-            </Button>
+        
+           
           </div>
 
           <div className="flex gap-6 pt-4">
@@ -88,7 +80,7 @@ export function Hero() {
               href="https://github.com/Sadusha13"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#64748B] hover:text-[#2563EB] transition-colors"
+              className="theme-copy text-[#64748B] hover:text-[#2563EB] transition-colors"
             >
               <Github className="w-6 h-6" />
             </a>
@@ -96,13 +88,13 @@ export function Hero() {
               href="https://www.linkedin.com/in/sadusha-nilupul13/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#64748B] hover:text-[#2563EB] transition-colors"
+              className="theme-copy text-[#64748B] hover:text-[#2563EB] transition-colors"
             >
               <Linkedin className="w-6 h-6" />
             </a>
             <a
               href="mailto:sadushanilupul13@gmail.com"
-              className="text-[#64748B] hover:text-[#2563EB] transition-colors"
+              className="theme-copy text-[#64748B] hover:text-[#2563EB] transition-colors"
             >
               <Mail className="w-6 h-6" />
             </a>
@@ -110,7 +102,7 @@ export function Hero() {
               href="https://wa.me/94783839119"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#64748B] hover:text-[#25D366] transition-colors"
+              className="theme-copy text-[#64748B] hover:text-[#25D366] transition-colors"
               title="Chat on WhatsApp"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -122,7 +114,7 @@ export function Hero() {
 
         {/* Right Side - Profile Image */}
         <div className="flex justify-center">
-          <div className="w-[50px] h-[400px] rounded-2xl overflow-hidden shadow-[0px_10px_30px_rgba(0,0,0,0.08)]">
+          <div className="theme-card w-[50px] h-[400px] rounded-2xl overflow-hidden shadow-[0px_10px_30px_rgba(0,0,0,0.08)]">
             <ImageWithFallback
               src={profileImg}
               alt="Sadusha Nilupul Profile"

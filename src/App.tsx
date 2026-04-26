@@ -1,15 +1,35 @@
+import { useEffect, useState } from "react";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { Skills } from "./components/Skills";
 import { Projects } from "./components/Projects";
+import { AllProjectsPage } from "./components/AllProjectsPage";
 import { Experience } from "./components/Experience";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 
 export default function App() {
+  const [isAllProjectsPage, setIsAllProjectsPage] = useState(
+    window.location.hash === "#all-projects",
+  );
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setIsAllProjectsPage(window.location.hash === "#all-projects");
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  if (isAllProjectsPage) {
+    return <AllProjectsPage />;
+  }
+
   return (
-    <div className="min-h-screen font-['Inter']">
+    <div className="app-shell min-h-screen font-['Inter'] transition-colors duration-300">
       <Navbar />
       <Hero />
       <About />

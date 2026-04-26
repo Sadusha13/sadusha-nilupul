@@ -48,10 +48,10 @@ const skills = [
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 px-20 bg-[#F8FAFC]">
+    <section id="skills" className="theme-section-alt py-24 px-20 bg-[#F8FAFC] transition-colors duration-300">
       <div className="max-w-[1280px] mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-4 text-[#111827] font-['Poppins']">Skills & Expertise</h2>
-        <p className="text-center text-[#64748B] mb-16 max-w-2xl mx-auto">
+        <h2 className="theme-title text-4xl font-bold text-center mb-4 text-[#111827] font-['Poppins']">Skills & Expertise</h2>
+        <p className="theme-copy text-center text-[#64748B] mb-16 max-w-2xl mx-auto">
           A comprehensive toolkit for building modern applications
         </p>
         
@@ -61,21 +61,21 @@ export function Skills() {
             return (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-6 shadow-[0px_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0px_15px_40px_rgba(0,0,0,0.12)] transition-shadow"
+                className="theme-card bg-white rounded-2xl p-6 shadow-[0px_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0px_15px_40px_rgba(0,0,0,0.12)] transition-shadow"
               >
                 <div className="w-14 h-14 bg-[#2563EB]/10 rounded-xl flex items-center justify-center mb-4">
                   <Icon className="w-7 h-7 text-[#2563EB]" />
                 </div>
-                <h3 className="text-xl font-semibold text-[#111827] mb-2 font-['Poppins']">{skill.title}</h3>
-                <p className="text-sm text-[#64748B] mb-4">{skill.description}</p>
+                <h3 className="theme-title text-xl font-semibold text-[#111827] mb-2 font-['Poppins']">{skill.title}</h3>
+                <p className="theme-copy text-sm text-[#64748B] mb-4">{skill.description}</p>
                 
                 {/* Level Bar */}
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span className="text-[#64748B]">Proficiency</span>
+                    <span className="theme-copy text-[#64748B]">Proficiency</span>
                     <span className="text-[#2563EB] font-semibold">{skill.level}%</span>
                   </div>
-                  <div className="w-full h-2 bg-[#E2E8F0] rounded-full overflow-hidden">
+                  <div className="theme-progress-track w-full h-2 bg-[#E2E8F0] rounded-full overflow-hidden">
                     <div
                       className="h-full bg-[#2563EB] rounded-full transition-all duration-500"
                       style={{ width: `${skill.level}%` }}

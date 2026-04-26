@@ -1,7 +1,18 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Download, Github, Linkedin, Mail } from "lucide-react";
+import { Button } from "./ui/button";
+import resumeFile from "../assets/cv/sadusha_nilupul.resume.pdf";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const downloadFile = (fileUrl: string, fileName: string) => {
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <footer className="bg-[#111827] text-slate-300 py-16 px-20">
@@ -11,7 +22,16 @@ export function Footer() {
             <h3 className="text-white text-xl font-semibold mb-4 font-['Poppins']">Sadusha Nilupul</h3>
             <p className="text-slate-400 leading-relaxed">
              Full-Stack Developer with a growing focus on AI & Machine Learning, crafting intelligent digital experiences.
-            </p>
+            </p><br />
+            <Button
+              size="lg"
+              variant="outline"
+              className="h-12 px-6 rounded-[10px] border-[#2563EB] text-[#2563EB] hover:bg-[#111827] hover:text-white flex items-center gap-2 mt-5"
+              onClick={() => downloadFile(resumeFile, "sadusha_nilupul_resume.pdf")}
+            >
+                <Download className="w-4 h-4 mr-2" />
+                Download Resume
+            </Button>
           </div>
           
           <div>

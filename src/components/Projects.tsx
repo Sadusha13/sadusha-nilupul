@@ -5,6 +5,7 @@ import hotelImg from "../assets/images/Hotel.png";
 import smsImg from "../assets/images/SMS.png";
 import smartHomeImg from "../assets/images/smart_home.jpg";
 import cityImg from "../assets/images/city.png";
+import cafeImg from "../assets/images/cafe.png";
 
 type Project = {
   title: string;
@@ -15,7 +16,7 @@ type Project = {
   demo?: string;
 };
 
-const projects: Project[] = [
+export const projects: Project[] = [
   {
     title: "Vista Veranda",
     description:
@@ -46,30 +47,42 @@ const projects: Project[] = [
     description:
       "Digital platform providing citizens with real-time city information, services, emergency alerts, and civic engagement tools.",
     image: cityImg,
-    tags: ["Web Development", "Database", "API"],
+    tags: ["React", "SQL", "API"],
     github:
       "https://github.com/Sadusha13/SMART-CITY-INFORMATION-POTRAL",
     demo: "https://smart-city-information-potral.netlify.app/",
   },
+   {
+    title: "Coffee Cup Website",
+    description:
+      "A stylish and responsive coffee website built to deliver a warm café experience online, featuring high-quality visuals, elegant design, and user-friendly navigation.",
+    image: cafeImg,
+    tags: ["TailwindCSS", "HTML", "React"],
+    github: "https://github.com/Sadusha13/Coffe-Cup-web-site",
+  },
+  
+
 ];
 
 export function Projects() {
+  const featuredProjects = projects.slice(0, 3);
+
   return (
-    <section id="projects" className="py-24 px-20 bg-[#F8FAFC]">
+    <section id="projects" className="theme-section-alt py-24 px-20 bg-[#F8FAFC] transition-colors duration-300">
       <div className="max-w-[1280px] mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-4 text-[#111827] font-['Poppins']">
+        <h2 className="theme-title text-4xl font-bold text-center mb-4 text-[#111827] font-['Poppins']">
           Featured Projects
         </h2>
-        <p className="text-center text-[#64748B] mb-16 max-w-2xl mx-auto">
+        <p className="theme-copy text-center text-[#64748B] mb-16 max-w-2xl mx-auto">
           A selection of completed projects showcasing my skills
           in full-stack development and system design
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {projects.map((project) => (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {featuredProjects.map((project) => (
             <div
               key={project.title}
-              className="bg-white rounded-2xl overflow-hidden shadow-[0px_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0px_15px_40px_rgba(0,0,0,0.12)] transition-shadow"
+              className="theme-card bg-white rounded-2xl overflow-hidden shadow-[0px_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0px_15px_40px_rgba(0,0,0,0.12)] transition-shadow"
             >
               <div className="relative h-52 overflow-hidden">
                 <ImageWithFallback
@@ -79,10 +92,10 @@ export function Projects() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#111827] mb-2 font-['Poppins']">
+                <h3 className="theme-title text-xl font-semibold text-[#111827] mb-2 font-['Poppins']">
                   {project.title}
                 </h3>
-                <p className="text-sm text-[#64748B] mb-4 leading-relaxed">
+                <p className="theme-copy text-sm text-[#64748B] mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -133,6 +146,17 @@ export function Projects() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <a href="#all-projects">
+            <Button
+              size="lg"
+              className="h-12 rounded-[10px] bg-[#2563EB] px-6 text-white hover:bg-[#1d4ed8]"
+            >
+              Show All Projects
+            </Button>
+          </a>
         </div>
       </div>
     </section>
