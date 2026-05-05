@@ -1468,6 +1468,39 @@
     background-color: #ffffff;
   }
 
+  /* Accent utilities for components that use the brand blue */
+  .theme-accent {
+    color: #2563EB;
+  }
+
+  .theme-accent-bg {
+    background-color: rgba(37, 99, 235, 0.1);
+  }
+
+  .theme-accent-border {
+    border-color: #2563EB;
+  }
+
+  .theme-accent-btn-outline {
+    border-color: #2563EB;
+    color: #2563EB;
+    background-color: transparent;
+  }
+
+  .theme-accent-btn-outline:hover {
+    background-color: #2563EB;
+    color: #ffffff;
+  }
+
+  .theme-accent-btn-solid {
+    background-color: #2563EB;
+    color: #ffffff;
+  }
+
+  .theme-accent-btn-solid:hover {
+    filter: brightness(0.95);
+  }
+
   .theme-toggle {
     border-color: #cbd5e1;
     color: #334155;
@@ -1519,6 +1552,33 @@
 
   .dark .theme-card-soft {
     background-color: #111827;
+  }
+
+  .dark .theme-accent {
+    color: #93c5fd;
+  }
+
+  .dark .theme-accent-bg {
+    background-color: rgba(37, 99, 235, 0.12);
+  }
+
+  .dark .theme-accent-border {
+    border-color: #1e40af;
+  }
+
+  .dark .theme-accent-btn-outline {
+    border-color: #1e40af;
+    color: #93c5fd;
+  }
+
+  .dark .theme-accent-btn-outline:hover {
+    background-color: #1e40af;
+    color: #ffffff;
+  }
+
+  .dark .theme-accent-btn-solid {
+    background-color: #1d4ed8;
+    color: #ffffff;
   }
 
   .dark .theme-progress-track {
