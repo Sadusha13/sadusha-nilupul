@@ -22,7 +22,7 @@ export const projects: Project[] = [
     description:
       "Comprehensive hotel management system with booking management, room allocation, staff management, and customer relationship features.",
     image: hotelImg,
-    tags: ["Java", "MySQL", "Java"],
+    tags: ["Java", "MySQL"],
     github: "https://github.com/Sadusha13/vista_veranda",
     demo: "https://sadusha13.github.io/vista_veranda/",
   },
@@ -53,12 +53,13 @@ export const projects: Project[] = [
     demo: "https://smart-city-information-potral.netlify.app/",
   },
    {
-    title: "Coffee Cup Website",
+    title: "Master Cafe Website",
     description:
       "A stylish and responsive coffee website built to deliver a warm café experience online, featuring high-quality visuals, elegant design, and user-friendly navigation.",
     image: cafeImg,
     tags: ["TailwindCSS", "HTML", "React"],
     github: "https://github.com/Sadusha13/Coffe-Cup-web-site",
+    demo: "https://mastercaf.netlify.app/",
   },
   
 
@@ -68,21 +69,22 @@ export function Projects() {
   const featuredProjects = projects.slice(0, 3);
 
   return (
+    
     <section id="projects" className="theme-section-alt py-24 px-20 bg-[#F8FAFC] transition-colors duration-300">
-      <div className="max-w-[1280px] mx-auto">
-        <h2 className="theme-title text-4xl font-bold text-center mb-4 text-[#111827] font-['Poppins']">
-          Featured Projects
-        </h2>
-        <p className="theme-copy text-center text-[#64748B] mb-16 max-w-2xl mx-auto">
-          A selection of completed projects showcasing my skills
-          in full-stack development and system design
-        </p>
+      <div className="mx-auto max-w-[1400px]">
+        <div className="mb-10 flex items-center justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-semibold text-[#111827] md:text-5xl font-['Poppins']">
+               Projects
+            </h1>
+          </div>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           {featuredProjects.map((project) => (
-            <div
+            <article
               key={project.title}
-              className="theme-card bg-white rounded-2xl overflow-hidden shadow-[0px_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0px_15px_40px_rgba(0,0,0,0.12)] transition-shadow"
+              className="overflow-hidden rounded-2xl bg-white shadow-[0px_10px_30px_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0px_15px_40px_rgba(0,0,0,0.12)]"
             >
               <div className="relative h-52 overflow-hidden">
                 <ImageWithFallback
@@ -91,60 +93,51 @@ export function Projects() {
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
+
               <div className="p-6">
-                <h3 className="theme-title text-xl font-semibold text-[#111827] mb-2 font-['Poppins']">
+                <h3 className="theme-title mb-2 text-xl font-semibold text-[#111827] font-['Poppins']">
                   {project.title}
                 </h3>
-                <p className="theme-copy text-sm text-[#64748B] mb-4 leading-relaxed">
+                <p className="theme-copy mb-4 text-sm leading-relaxed text-[#64748B]">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, i) => (
+                <div className="mb-4 flex flex-wrap gap-2">
+                  {project.tags.map((tag, index) => (
                     <span
-                      key={i}
-                      className="text-xs px-3 py-1 bg-[#2563EB]/10 text-[#2563EB] rounded-full"
+                      key={index}
+                      className="rounded-full bg-[#2563EB]/10 px-3 py-1 text-xs text-[#2563EB]"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex gap-3">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1"
-                  >
+                <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:gap-4">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex-1">
                     <Button
                       size="sm"
                       variant="outline"
-                      className="w-full rounded-[10px] border-[#2563EB] text-[#2563EB] hover:bg-[#2563EB] hover:text-white"
+                      className="h-8 w-full rounded-xl border-[#2563EB] px-5 text-sm text-[#2563EB] hover:bg-[#2563EB] hover:text-white"
                     >
-                      <Github className="w-4 h-4 mr-2" />
+                      <Github className="mr-1 h-8 w-8" />
                       View Code
                     </Button>
                   </a>
                   {project.demo && (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1"
-                    >
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex-1">
                       <Button
                         size="sm"
-                        className="w-full rounded-[10px] bg-[#2563EB] hover:bg-[#1d4ed8] text-white"
+                        className="h-8 w-full rounded-xl bg-[#2563EB] px-5 text-sm text-white hover:bg-[#1d4ed8]"
                       >
-                        <ExternalLink className="w-4 h-4 mr-2" />
+                        <ExternalLink className="mr-1 h-8 w-8" />
                         Demo
                       </Button>
                     </a>
                   )}
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
